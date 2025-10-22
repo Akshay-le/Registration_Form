@@ -8,55 +8,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dob = htmlspecialchars($_POST['dob'] ?? '');
     $gender = htmlspecialchars($_POST['gender'] ?? 'Not specified');
     $confirmed = isset($_POST['confirm']) ? 'Yes' : 'No';
-} else {
-    echo "<p style='color:red;'>Invalid request method.</p>";
-    exit;
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Submitted Details</title>
+    <title>Form Submission Successful</title>
     <style>
         body {
-            background: #f0f3f7;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4b7bec, #1e90ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-        .container {
+        .card {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            text-align: left;
             width: 400px;
-            margin: 80px auto;
-            background: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px gray;
+            animation: fadeIn 0.6s ease;
         }
         h2 {
             text-align: center;
-            color: #28a745;
+            color: #2d3436;
+            margin-bottom: 15px;
         }
         p {
-            margin: 10px 0;
+            font-size: 15px;
+            color: #2d3436;
+            margin: 8px 0;
         }
-        a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            text-decoration: none;
-            color: white;
-            background: #007bff;
-            padding: 10px;
-            border-radius: 4px;
+        .highlight {
+            color: #0984e3;
+            font-weight: 600;
         }
-        a:hover {
-            background: #0056b3;
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Form Submitted Successfully!</h2>
-        <p><strong>Full Name:</strong> <?= $fullname ?></p>
+    <div class="card">
+        <h2>✅ Application Submitted</h2>
+        <p><strong>Full Name:</strong> <span class="highlight"><?= $fullname ?></span></p>
         <p><strong>Email:</strong> <?= $email ?></p>
         <p><strong>Phone:</strong> <?= $phone ?></p>
         <p><strong>Address:</strong> <?= $address ?></p>
@@ -64,7 +64,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p><strong>Date of Birth:</strong> <?= $dob ?></p>
         <p><strong>Gender:</strong> <?= $gender ?></p>
         <p><strong>Confirmed:</strong> <?= $confirmed ?></p>
-        <a href="index.html">← Go Back</a>
     </div>
 </body>
 </html>
+<?php
+} else {
+    echo "<p style='color:red;'>Invalid request method.</p>";
+}
+?>
