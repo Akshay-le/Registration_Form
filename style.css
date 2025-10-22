@@ -1,59 +1,127 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background */
 body {
-    font-family: Arial, sans-serif;
-    background: #f0f3f7;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74b9ff, #a29bfe);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
-.container {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    width: 350px;
-    box-shadow: 0 0 10px gray;
+
+/* Form container */
+.wrapper {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
 }
+
+.form-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Heading */
 h2 {
     text-align: center;
-    color: #333;
+    margin-bottom: 20px;
+    color: #2d3436;
 }
+
+/* Form groups */
+.form-group {
+    margin-bottom: 15px;
+}
+
 label {
-    font-weight: bold;
     display: block;
-    margin-top: 10px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2d3436;
 }
-input[type="text"], input[type="email"], input[type="tel"], textarea, select, input[type="date"] {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-input[type="submit"] {
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
     width: 100%;
     padding: 10px;
-    margin-top: 15px;
-    background: #28a745;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #0984e3;
+    outline: none;
+}
+
+/* Gender fieldset */
+.gender-fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.gender-options label {
+    margin-right: 15px;
+}
+
+/* Confirm checkbox */
+.confirm {
+    display: flex;
+    align-items: center;
+}
+
+.confirm input {
+    margin-right: 8px;
+}
+
+/* Submit button */
+input[type="submit"] {
+    width: 100%;
+    background: #0984e3;
     color: white;
     font-weight: bold;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
+    padding: 12px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
 }
+
 input[type="submit"]:hover {
-    background: #218838;
+    background: #74b9ff;
 }
-fieldset {
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
+
+/* Display output */
+#display {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #dfe6e9;
+    text-align: left;
 }
-.gender-options label {
-    margin-right: 10px;
-}
-.confirm-label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 10px;
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
