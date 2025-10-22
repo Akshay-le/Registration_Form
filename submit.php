@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email'] ?? '');
     $phone = htmlspecialchars($_POST['phone'] ?? '');
     $address = htmlspecialchars($_POST['address'] ?? '');
-    $age = htmlspecialchars($_POST['age'] ?? '');
+  
     $course = htmlspecialchars($_POST['course'] ?? '');
     $dob = htmlspecialchars($_POST['dob'] ?? '');
     $gender = htmlspecialchars($_POST['gender'] ?? '');
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p><strong>Email:</strong> <span><?= $email ?></span></p>
     <p><strong>Phone:</strong> <span><?= $phone ?></span></p>
     <p><strong>Address:</strong> <span><?= $address ?></span></p>
-    <p><strong>Age:</strong> <span><?= $age ?></span></p>
+   
     <p><strong>Course:</strong> <span><?= $course ?></span></p>
     <p><strong>Date of Birth:</strong> <span><?= $dob ?></span></p>
     <p><strong>Gender:</strong> <span><?= $gender ?></span></p>
