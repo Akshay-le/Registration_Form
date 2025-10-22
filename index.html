@@ -1,76 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Online Application Form</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="form-wrapper">
-        <div class="form-card">
-            <h2>Online Application Form</h2>
-            <p class="subtitle">Please fill in the details carefully</p>
-
-            <form id="registrationForm" action="submit.php" method="POST" novalidate>
-                <div class="form-group">
-                    <label for="fullname">Full Name</label>
-                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="address">Address</label>
-                    <textarea id="address" name="address" rows="3" placeholder="Enter your complete address" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="course">Select Course</label>
-                    <select id="course" name="course" required>
-                        <option value="">-- Select Course --</option>
-                        <option value="Python">Python</option>
-                        <option value="Java">Java</option>
-                        <option value="Web Development">Web Development</option>
-                        <option value="Data Science">Data Science</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="dob">Date of Birth</label>
-                    <input type="date" id="dob" name="dob" required>
-                </div>
-
-                <fieldset class="gender-fieldset">
-                    <legend>Gender</legend>
-                    <div class="gender-options">
-                        <label><input type="radio" name="gender" value="Male" required> Male</label>
-                        <label><input type="radio" name="gender" value="Female"> Female</label>
-                        <label><input type="radio" name="gender" value="Other"> Other</label>
-                    </div>
-                </fieldset>
-
-                <div class="form-group confirm">
-                    <label>
-                        <input type="checkbox" id="confirm" name="confirm" required>
-                        I confirm that the information provided is accurate.
-                    </label>
-                </div>
-
-                <button type="submit" class="submit-btn">Submit Application</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  <div class="overlay"></div>
+  <div class="form-container">
+    <h2>Registration Form</h2>
+    <form action="submit.php" method="POST">
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone" pattern="[0-9]{10}" maxlength="10" required>
+      <textarea name="address" placeholder="Address" rows="2" required></textarea>
+      <input type="number" name="age" placeholder="Age" required>
+      <select name="course" required>
+        <option value="">Course</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="Web Development">Web Development</option>
+        <option value="Data Science">Data Science</option>
+      </select>
+      <input type="date" name="dob" required>
+      <select name="gender" required>
+        <option value="">Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </body>
 </html>
