@@ -1,9 +1,22 @@
-// script.js
-console.log("Form script loaded");
+console.log("script.js loaded");
 
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("registrationForm");
-    form.addEventListener("submit", () => {
-        console.log("Form submitted, redirecting to submit.php...");
+$(document).ready(function() {
+    $('#registrationForm').on('submit', function(event) {
+        event.preventDefault();
+
+        $.ajax({
+            url: 'submit.php',
+            method: 'POST',
+            data: $(this).serialize(),
+            success: function(response) {
+                // Redirect to a new page to display the response
+                document.open();
+                document.write(response);
+                document.close();
+            },
+            error: function(xhr, status, error) {
+                $('#display').html('<p style="color:red;">Submission error: ' + error + '</p>');
+            }
+        });
     });
 });
