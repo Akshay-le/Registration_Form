@@ -9,13 +9,13 @@ $(document).ready(function() {
             method: 'POST',
             data: $(this).serialize(),
             success: function(response) {
-                // Redirect to a new page to display the response
+                // Redirect to a new page showing submitted data
                 document.open();
                 document.write(response);
                 document.close();
             },
             error: function(xhr, status, error) {
-                $('#display').html('<p style="color:red;">Submission error: ' + error + '</p>');
+                alert("Error submitting form: " + error);
             }
         });
     });
